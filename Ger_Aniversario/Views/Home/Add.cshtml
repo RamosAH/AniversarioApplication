@@ -1,0 +1,23 @@
+﻿@using AniversarioApplication.Entidade
+@model Amigo
+
+<form method="post" asp-controller="Home" asp-action="Save">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nome</label>
+        <input type="text" class="form-control" asp-for="Nome">
+        <span asp-validation-for="Nome" style="color: red"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Sobrenome</label>
+        <input type="text" class="form-control" asp-for="Sobrenome">
+        <span asp-validation-for="Sobrenome" style="color: red"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Data de Aniversério</label>
+        <input type="text" class="form-control" placeholder="dd/mm/aaaa" asp-for="Aniversario">
+        <span asp-validation-for="Aniversario" style="color: red"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar Amigo</button>
+</form>

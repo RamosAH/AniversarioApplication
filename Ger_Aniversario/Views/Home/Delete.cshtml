@@ -1,0 +1,11 @@
+﻿@model AniversarioApplication.Entidade.Amigo
+
+<h1>Deseja realmente excluir:</h1>
+<br />
+<h2>@Model.Nome @Model.Sobrenome</h2>
+<h2>Data de Aniversario: @Model.Aniversario</h2>
+<br />
+<div>
+    <a asp-controller="Home" asp-action="Excluir" asp-route-amigoId="@Model.Id" style="color: red">Excluir</a>
+    <a asp-controller="Home" asp-action="Index" style="margin-left:10px">Voltar</a>
+</div>

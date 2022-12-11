@@ -1,0 +1,65 @@
+﻿@using AniversarioApplication.Entidade
+@model List<Amigo>
+@{
+    var lista = ViewBag.AniverHoje;
+}
+
+<div style="display:flex; justify-content:center;">
+    <div>
+        <h2 style="display:flex; justify-content:center;">Todos os amigos</h2>
+        <table class="table" style="border: 2px solid black">
+            <thead>
+                <tr>
+                   <th scope="col">Id</th>
+                   <th scope="col">Nome</th>
+                   <th scope="col">Sobrenome</th>
+                   <th scope="col">Data de Anivertsário</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach(var amigo in Model) 
+            {
+                <tr>
+                   <td>@amigo.Id</td>
+                   <td>@amigo.Nome</td>
+                   <td>@amigo.Sobrenome</td>
+                   <td>@amigo.Aniversario</td>
+           
+                   <td><a asp-action="Detalhes" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: blue">Detalhes</a></td>
+                   <td><a asp-action="Editar" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: purple">Editar</a></td>
+                   <td><a asp-action="Delete" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: red">Excluir Amigo</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2 style="display:flex; justify-content:center;">Aniversariantes de Hoje</h2>
+        <table class="table" style="border: 2px solid black; border-radius: 10px">
+            <thead>
+                <tr>
+                   <th scope="col">Id</th>
+                   <th scope="col">Nome</th>
+                   <th scope="col">Sobrenome</th>
+                   <th scope="col">Data de Anivertsário</th>
+                </tr>
+            </thead >
+            <tbody>
+            @foreach (var amigo in lista) {
+                <tr>
+                   <td>@amigo.Id</td>
+                   <td>@amigo.Nome</td>
+                   <td>@amigo.Sobrenome</td>
+                   <td>@amigo.Aniversario</td>
+
+                   <td><a asp-action="Detalhes" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: blue">Detalhes</a></td>
+                   <td><a asp-action="Editar" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: purple">Editar</a></td>
+                   <td><a asp-action="Delete" asp-controller="Home" asp-route-amigoId="@amigo.Id" style="color: red">Excluir Amigo</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

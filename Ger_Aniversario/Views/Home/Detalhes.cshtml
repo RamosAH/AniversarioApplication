@@ -1,0 +1,9 @@
+﻿@model AniversarioApplication.Entidade.Amigo
+
+<h1>Mais detalhes:</h1>
+<br />
+<h2>@Model.Nome @Model.Sobrenome</h2>
+<h2>Data de Aniversario: @Model.Aniversario</h2>
+<h2>Faltam @ViewBag.Detalhes para esse aniversário</h2>
+<br />
+<a asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
