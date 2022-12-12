@@ -103,7 +103,7 @@ namespace AniversarioApplication.Database {
                 connection.Close();
             }
         }
-        public void SalvarEdit(Amigo amigo, int amigoId) {
+        public void SalvarEdit(Amigo amigo) {
             using (SqlConnection connection = new SqlConnection(connectionString)) {
                 var sql = @$"
                              UPDATE AMIGOS 
@@ -117,7 +117,7 @@ namespace AniversarioApplication.Database {
                 command.CommandType = System.Data.CommandType.Text;
 
                 var pi = new SqlParameter("@Pi", SqlDbType.Int);
-                pi.Value = amigoId;
+                pi.Value = amigo.Id;
                 command.Parameters.Add(pi);
 
                 var p1 = new SqlParameter("@P1", SqlDbType.VarChar);
