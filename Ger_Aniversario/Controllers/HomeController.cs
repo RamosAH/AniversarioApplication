@@ -69,11 +69,11 @@ namespace AniversarioApplication.Controllers {
             return RedirectToAction("Index");
         }
         [HttpPost]
-            public IActionResult SaveEdit(Amigo model, int amigoId) {
+            public IActionResult SaveEdit(Amigo model) {
             if (ModelState.IsValid == false)
                 return View("Editar");
 
-            AniversarioManager.SalvarEdit(model, amigoId);
+            AniversarioManager.SalvarEdit(model);
 
             return RedirectToAction("Index");
         }
