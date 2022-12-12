@@ -24,10 +24,10 @@ namespace AniversarioApplication.Application {
             database.Excluir(id);
         }
 
-        public void SalvarEdit(Amigo amigo, int amigoId) {
-            database.SalvarEdit(amigo, amigoId);
+        public void SalvarEdit(Amigo amigo) {
+            database.SalvarEdit(amigo);
         }
-
+        
         public List<Amigo> Buscar(List<Amigo> lista, string part) {
             List<Amigo> encontrados = new List<Amigo>();
 
