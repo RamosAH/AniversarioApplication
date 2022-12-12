@@ -50,7 +50,8 @@ namespace AniversarioApplication.Application {
         }
 
         public double FaltaParaAniversario(Amigo amigo) {
-            string[] num = amigo.Aniversario.Split('/');
+            string data = amigo.Aniversario.ToString();
+            string[] num = data.Split('/');
             int dia = int.Parse(num[0]);
             int mes = int.Parse(num[1]);
             
