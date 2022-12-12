@@ -28,7 +28,7 @@ namespace AniversarioApplication.Database {
                         amigo.Id = data["Id"].ToString();
                         amigo.Nome = data["Nome"].ToString();
                         amigo.Sobrenome = data["Sobrenome"].ToString();
-                        amigo.Aniversario = data["Aniversario"].ToString();
+                        amigo.Aniversario = DateTime.Parse(data["Aniversario"].ToString());
 
                         result.Add(amigo);
                     }
@@ -65,7 +65,7 @@ namespace AniversarioApplication.Database {
                         result.Id = data["Id"].ToString();
                         result.Nome = data["Nome"].ToString();
                         result.Sobrenome = data["Sobrenome"].ToString();
-                        result.Aniversario = data["Aniversario"].ToString();
+                        result.Aniversario = DateTime.Parse(data["Aniversario"].ToString());
                     }
                 }
 
