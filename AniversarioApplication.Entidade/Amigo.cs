@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace AniversarioApplication.Entidade {
@@ -14,7 +14,6 @@ namespace AniversarioApplication.Entidade {
         public string Sobrenome { get; set; }
 
         [Required(ErrorMessage = "Data de Aniversario Obrigatório")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
-        public string Aniversario { get; set;}
+        public DateTime Aniversario { get; set;}
     }
 }
